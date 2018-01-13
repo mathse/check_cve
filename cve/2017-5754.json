@@ -1,0 +1,86 @@
+{
+    "name": "meltdown",
+    "os": {
+        "Ubuntu": {
+            "info_url": "https://wiki.ubuntu.com/SecurityTeam/KnowledgeBase/SpectreAndMeltdown",
+            "package_name": "linux-image-generic",
+            "query_command": "dpkg -s %s | grep Version | awk '{ print $2 }'",
+            "versions": {
+                "14.04": {
+                    "fixed_version": "4.4.0-108.131~14.04.1"
+                },
+                "16.04": {
+                    "fixed_version": "4.4.0.108.131"
+                },
+                "17.10": {
+                    "fixed_version": "4.13.0-24.28"
+                }
+            }
+        },
+        "CentOS": {
+            "info_url": "https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2017-5754",
+            "package_name": "kernel",
+            "query_command": "rpm -q %s --queryformat '%%{version}-%%{release}\\n' | tail -n1",
+            "versions": {
+                "6": {
+                    "fixed_version": "2.6.32-696.18.7.el6"
+                },
+                "7": {
+                    "fixed_version": "3.10.0-693.11.6.el7"
+                }
+            }
+        },
+        "Debian": {
+            "info_url": "https://security-tracker.debian.org/tracker/CVE-2017-5754",
+            "package_name": "linux",
+            "query_command": "dpkg -s %s-image-$(uname -r) | grep Version | awk '{ print $2 }'",
+            "versions": {
+                "7": {
+                    "fixed_version": "3.2.96-3"
+                },
+                "8": {
+                    "fixed_version": "3.16.44-2+deb8u5"
+                },
+                "9": {
+                    "fixed_version": "4.9.65-3+deb9u2"
+                }
+            }
+        },
+        "SLES": {
+            "info_url": "https://www.suse.com/de-de/security/cve/CVE-2017-5754/",
+            "package_name": "kernel-default",
+            "query_command": "rpm  -q %s --queryformat '%%{version}-%%{release}\\n' | tail -n1",
+            "versions": {
+                "12": {
+                    "fixed_version": "4.4.103-92.56.1"
+                }
+            }
+        },
+        "OracleLinux": {
+            "info_url": "http://blog.oracle48.nl/oracle-linux-patches-for-meltdown-and-spectre-information/",
+            "package_name": "kernel",
+            "query_command": "rpm  -q %s --queryformat '%%{version}-%%{release}\\n' | tail -n1",
+            "versions": {
+                "6": {
+                    "fixed_version": "2.6.32-573.49.3.el6"
+                },
+                "7": {
+                    "fixed_version": "3.10.0-514.36.5.el7"
+                }
+            }
+        },
+        "RedHat": {
+            "info_url": "https://access.redhat.com/security/vulnerabilities/speculativeexecution",
+            "package_name": "kernel",
+            "query_command": "rpm  -q %s --queryformat '%%{version}-%%{release}\\n' | tail -n1",
+            "versions": {
+                "6": {
+                    "fixed_version": "2.6.32-696.18.7"
+                },
+                "7": {
+                    "fixed_version": "3.10.0-693.11.6"
+                }
+            }
+        }
+    }
+}
