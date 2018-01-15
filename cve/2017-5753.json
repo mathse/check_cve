@@ -1,0 +1,5 @@
+{
+    "name": "spectre (bounds check bypass)",
+    "type": "script",
+    "script": "/opt/mdc/bin/spectre-meltdown-checker.sh --variant 1 --batch > /dev/null; echo $?"
+}

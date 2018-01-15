@@ -1,0 +1,5 @@
+{
+    "name": "spectre (branch target injection)",
+    "type": "script",
+    "script": "/opt/mdc/bin/spectre-meltdown-checker.sh --variant 2 --batch > /dev/null; echo $?"
+}

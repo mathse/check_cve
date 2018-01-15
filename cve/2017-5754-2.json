@@ -1,0 +1,5 @@
+{
+    "name": "meltdown (rogue data cache load)",
+    "type": "script",
+    "script": "/opt/mdc/bin/spectre-meltdown-checker.sh --variant 3 --batch > /dev/null; echo $?"
+}
