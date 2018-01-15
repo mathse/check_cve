@@ -1,5 +1,6 @@
 {
     "name": "meltdown",
+    "type": "package",
     "os": {
         "Ubuntu": {
             "info_url": "https://wiki.ubuntu.com/SecurityTeam/KnowledgeBase/SpectreAndMeltdown",
